@@ -6,7 +6,9 @@
 
 {% block content %}
     {% for blog in blogs %}
-        <h2> {{blog.title}} </h2>
+        <a href="/blogs/{{blog.id}}">
+            <h2> {{blog.title}} </h2>
+        </a>
         <p> {{blog.desc}} </p>
     {% endfor%}
 {% endblock %}
