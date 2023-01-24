@@ -7,6 +7,7 @@ app_name = 'blogs'
 urlpatterns = [
     path('', views.index, name='index'),
     path('<int:id>', views.single, name='single'),
+    path('comment/<int:id>', views.comment, name='comment'),
 ]
 
 hander404 = 'views.handler404'

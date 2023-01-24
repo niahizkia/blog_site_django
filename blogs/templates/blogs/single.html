@@ -9,6 +9,11 @@
     <p> {{blog.created_at}} </p>
     <hr>
     <h3> Komentar</h3>
+    <form action="{% url 'blogs:comment' blog.id%}" method="post">
+        {% csrf_token %}
+        <textarea name="desc" cols="30" rows="10"></textarea> <br>
+        <input type="submit" value="Post">
+    </form>
     {% for comment in blog.comment_set.all %}
         <p> {{ comment.desc }}</p>
     {% endfor %}
