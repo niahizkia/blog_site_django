@@ -1,6 +1,12 @@
 from pathlib import Path
 import os
 
+# email configuration
+EMAIL_HOST = 'smtp.mailtrap.io'
+EMAIL_HOST_USER = '023795c61ceb3e'
+EMAIL_HOST_PASSWORD = 'de955400cb53ce'
+EMAIL_PORT = '2525'
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
