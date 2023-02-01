@@ -20,7 +20,7 @@ def single(request, id):
 
 def comment(request, id):
     blog = get_object_or_404(Blog, pk=id)
-
+    form = forms.CommentForm()
     if request.method == 'POST':
         form = forms.CommentForm(request.POST)
         if form.is_valid():
@@ -29,4 +29,5 @@ def comment(request, id):
             
             messages.success(request, 'Comment sent..')
             return HttpResponseRedirect(reverse('blogs:index'))
-        # return render(request, 'blogs/single.html', {'blog':blog})
+
+    return render(request, 'blogs/single.html', {'blog':blog, 'form':form})

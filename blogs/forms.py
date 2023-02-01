@@ -1,7 +1,10 @@
 from .models import Comment
-from django.forms import ModelForm
+from django import forms
+from django.core import validators
 
-class CommentForm(ModelForm):
+class CommentForm(forms.ModelForm):
+    desc = forms.CharField(required=True, widget=forms.Textarea,
+                            validators=[validators.MinLengthValidator(5)])
     class Meta:
         model  = Comment
         fields = ['desc']
